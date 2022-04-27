@@ -1,6 +1,5 @@
 package com.iss;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -10,7 +9,7 @@ public class UserInterface {
     public static void main(String[] args) {
         System.out.println("Hello in Space Station Application!");
 
-        while (true){
+        while (true) {
 
             System.out.println("What would you do?");
             System.out.println("1.Calculate the speed of the ISS");
@@ -18,9 +17,9 @@ public class UserInterface {
             System.out.println("3.Show number of people in space ");
             System.out.println("4.Exit application");
 
-            Integer option = newInteger();
+            int option = newInteger();
 
-            switch (option){
+            switch (option) {
                 case 1 -> {
                     System.out.println("You choose 1");
                     break;
@@ -47,10 +46,10 @@ public class UserInterface {
             try {
                 String input = scanner.nextLine();
                 return Integer.parseInt(input);
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("You must enter only numbers");
             }
-            }
+        }
 
     }
 }
