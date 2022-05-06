@@ -15,5 +15,7 @@ public class ISSLocation {
     private Long id;
     private float latitude;
     private float longitude;
+//    private String message;
+//    private Long timestamp;
 
 }

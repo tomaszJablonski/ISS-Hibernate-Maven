@@ -8,6 +8,10 @@ public class ISSResponse {
 
     @JsonProperty("iss_position")
     private ISSPosition issPosition;
+    @JsonProperty("message")
+    private String message;
+    @JsonProperty("timestamp")
+    private Long timestamp;
 
     @Data
     public static class ISSPosition {
@@ -16,6 +20,5 @@ public class ISSResponse {
         @JsonProperty("longitude")
         private float longitude;
 
-
     }
-    }
+}
