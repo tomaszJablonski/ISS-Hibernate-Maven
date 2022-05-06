@@ -1,14 +1,11 @@
 package com.iss.program.speedOfTheISS.client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.iss.program.speedOfTheISS.ISSLocation;
 import lombok.RequiredArgsConstructor;
 
-import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 public class IssClient {
@@ -19,10 +16,9 @@ public class IssClient {
 
     private final ObjectMapper objectMapper;
 
-    public Optional<ISSLocation> getIssLocation(float latitude, float longitude) {
+    public ISSResponse.ISSPosition getIssLocation() {
         HttpRequest httpRequest = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create(String.format(URL, latitude, longitude)))
                 .build();
 
         HttpClient httpClient = HttpClient.newHttpClient();
@@ -32,12 +28,12 @@ public class IssClient {
 
             ISSResponse issResponse = objectMapper.readValue(responseBody, ISSResponse.class);
 
-            return issResponse.getIss_position().stream()
-                    .map(issResponseMapper::issLocation)
-                    .findFirst();
+            return issResponse.getIssPosition();
 
         } catch (Exception e) {
-            return Optional.empty();
+            return System.out.println(e.getMessage());
+
+
         }
 
     }
