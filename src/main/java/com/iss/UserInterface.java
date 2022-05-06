@@ -1,18 +1,25 @@
 package com.iss;
 
+import com.iss.program.speedOfTheISS.ISSController;
+import com.iss.program.speedOfTheISS.ISSLocation;
+import lombok.RequiredArgsConstructor;
+
 import java.util.Scanner;
 
+@RequiredArgsConstructor
 public class UserInterface {
 
-    static Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner;
 
-    public static void main(String[] args) {
+    private final ISSController issController;
+
+    public void runApplication() {
         System.out.println("Hello in Space Station Application!");
 
         while (true) {
 
             System.out.println("What would you do?");
-            System.out.println("1.Calculate the speed of the ISS");
+            System.out.println("1.Add and save current location of ISS Space Station ");
             System.out.println("2.Return a list of upcoming ISS sessions for a specific location");
             System.out.println("3.Show number of people in space ");
             System.out.println("4.Exit application");
@@ -22,6 +29,7 @@ public class UserInterface {
             switch (option) {
                 case 1 -> {
                     System.out.println("You choose 1");
+                    getLocation();
                     break;
                 }
                 case 2 -> {
@@ -41,7 +49,7 @@ public class UserInterface {
 
     }
 
-    private static int newInteger() {
+    private int newInteger() {
         while (true) {
             try {
                 String input = scanner.nextLine();
@@ -50,6 +58,15 @@ public class UserInterface {
                 System.out.println("You must enter only numbers");
             }
         }
+    }
 
+    private void getLocation() {
+        String responseBody = issController.getISSLocation(new ISSLocation());
+        responseBody = responseBody
+                .replaceAll("\\{", "\n\t\\{")
+                .replaceAll("}]", "}\n]");
+
+        // GET: http://mojadomena.pl/locations
+        System.out.println("Odpowiedź serwera: \n" + responseBody + "\n");
     }
 }

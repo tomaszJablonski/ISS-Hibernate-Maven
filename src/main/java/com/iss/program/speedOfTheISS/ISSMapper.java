@@ -7,8 +7,8 @@ public class ISSMapper {
 
     protected ISSLocationDTO issLocationDTO(ISSLocation issLocation) {
         return ISSLocationDTO.builder()
-                .latitude(issLocation.getPosition())
-                .longitude(issLocation.getPosition())
+                .latitude(issLocation.getLatitude())
+                .longitude(issLocation.getLongitude())
                 .build();
     }
 }

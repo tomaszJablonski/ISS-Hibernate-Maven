@@ -12,16 +12,11 @@ public class ISSResponse {
 
     @Data
     public static class ISSPosition {
-        @JsonProperty("iss_position")
-        private ISSPositionLatLong issPositionLatLong;
+        @JsonProperty("latitude")
+        private float latitude;
+        @JsonProperty("longitude")
+        private float longitude;
 
-        @Data
-        public static class ISSPositionLatLong {
-            @JsonProperty("longitude")
-            private float longitude;
-            @JsonProperty("latitude")
-            private float latitude;
 
-        }
     }
-}
+    }
