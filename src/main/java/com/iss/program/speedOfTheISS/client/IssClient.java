@@ -32,7 +32,7 @@ public class IssClient {
 
             ISSResponse issResponse = objectMapper.readValue(responseBody, ISSResponse.class);
 
-            return issResponse.getIssPositionList().stream()
+            return issResponse.getIss_position().stream()
                     .map(issResponseMapper::issLocation)
                     .findFirst();
 

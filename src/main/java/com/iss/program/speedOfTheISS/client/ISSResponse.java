@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 public class ISSResponse {
 
-    private List<ISSPosition> issPositionList;
+    private List<ISSPosition> iss_position;
 
     @Data
     public static class ISSPosition {
