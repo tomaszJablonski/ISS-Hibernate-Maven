@@ -33,7 +33,7 @@ public class IssApp {
         ISSRepositoryIMPL issRepository = new ISSRepositoryIMPL(sessionFactory);
         ISSResponseMapper issResponseMapper = new ISSResponseMapper();
         ObjectMapper objectMapper = new ObjectMapper();
-        IssClient issClient = new IssClient(issResponseMapper, objectMapper);
+        IssClient issClient = new IssClient(objectMapper, issResponseMapper);
 
         ISSService issService = new ISSService(issClient, issRepository);
 
