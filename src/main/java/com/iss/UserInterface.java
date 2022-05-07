@@ -1,7 +1,7 @@
 package com.iss;
 
-import com.iss.program.speedOfTheISS.ISSController;
-import com.iss.program.speedOfTheISS.ISSLocation;
+import com.iss.program.locationOfTheISS.ISSController;
+import com.iss.program.locationOfTheISS.ISSLocation;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Scanner;

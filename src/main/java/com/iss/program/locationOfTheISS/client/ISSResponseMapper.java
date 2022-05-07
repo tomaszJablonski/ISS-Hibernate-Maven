@@ -1,6 +1,6 @@
-package com.iss.program.speedOfTheISS.client;
+package com.iss.program.locationOfTheISS.client;
 
-import com.iss.program.speedOfTheISS.ISSLocation;
+import com.iss.program.locationOfTheISS.ISSLocation;
 
 public class ISSResponseMapper {
 

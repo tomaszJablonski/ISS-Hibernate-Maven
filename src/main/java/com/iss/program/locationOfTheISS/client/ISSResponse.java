@@ -1,4 +1,4 @@
-package com.iss.program.speedOfTheISS.client;
+package com.iss.program.locationOfTheISS.client;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

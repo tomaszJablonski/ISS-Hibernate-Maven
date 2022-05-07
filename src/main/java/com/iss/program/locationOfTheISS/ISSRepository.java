@@ -1,4 +1,4 @@
-package com.iss.program.speedOfTheISS;
+package com.iss.program.locationOfTheISS;
 
 public interface ISSRepository {
 

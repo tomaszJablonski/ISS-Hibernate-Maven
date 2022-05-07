@@ -1,12 +1,12 @@
 package com.iss;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.iss.program.speedOfTheISS.ISSController;
-import com.iss.program.speedOfTheISS.ISSMapper;
-import com.iss.program.speedOfTheISS.ISSRepositoryIMPL;
-import com.iss.program.speedOfTheISS.ISSService;
-import com.iss.program.speedOfTheISS.client.ISSResponseMapper;
-import com.iss.program.speedOfTheISS.client.IssClient;
+import com.iss.program.locationOfTheISS.ISSController;
+import com.iss.program.locationOfTheISS.ISSMapper;
+import com.iss.program.locationOfTheISS.ISSRepositoryIMPL;
+import com.iss.program.locationOfTheISS.ISSService;
+import com.iss.program.locationOfTheISS.client.ISSResponseMapper;
+import com.iss.program.locationOfTheISS.client.IssClient;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
