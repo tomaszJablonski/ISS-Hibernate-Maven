@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 @RequiredArgsConstructor
 public class UserInterface {
-
     private final Scanner scanner;
 
     private final ISSController issController;

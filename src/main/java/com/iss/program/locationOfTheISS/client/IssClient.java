@@ -16,8 +16,6 @@ public class IssClient {
 
     private final ObjectMapper objectMapper;
 
-    private final ISSResponseMapper issResponseMapper;
-
     public ISSResponse.ISSPosition getIssLocation() throws IOException, InterruptedException {
         HttpRequest httpRequest = HttpRequest.newBuilder()
                 .GET()
@@ -25,7 +23,7 @@ public class IssClient {
                 .build();
 
         HttpClient httpClient = HttpClient.newHttpClient();
-//        try {
+
         HttpResponse<String> httpResponse = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
         String responseBody = httpResponse.body();
 
@@ -33,12 +31,6 @@ public class IssClient {
 
         return issResponse.getIssPosition();
 
-//        } catch (Exception e) {
-//            return System.out.println(e.getMessage());
-//
-//
-//
-//        }
 
     }
 

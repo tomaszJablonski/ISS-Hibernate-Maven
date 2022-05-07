@@ -5,7 +5,6 @@ import com.iss.program.locationOfTheISS.ISSController;
 import com.iss.program.locationOfTheISS.ISSMapper;
 import com.iss.program.locationOfTheISS.ISSRepositoryIMPL;
 import com.iss.program.locationOfTheISS.ISSService;
-import com.iss.program.locationOfTheISS.client.ISSResponseMapper;
 import com.iss.program.locationOfTheISS.client.IssClient;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -31,9 +30,8 @@ public class IssApp {
                 .buildSessionFactory();
 
         ISSRepositoryIMPL issRepository = new ISSRepositoryIMPL(sessionFactory);
-        ISSResponseMapper issResponseMapper = new ISSResponseMapper();
         ObjectMapper objectMapper = new ObjectMapper();
-        IssClient issClient = new IssClient(objectMapper, issResponseMapper);
+        IssClient issClient = new IssClient(objectMapper);
 
         ISSService issService = new ISSService(issClient, issRepository);
 

@@ -12,7 +12,6 @@ public class ISSService {
     private final IssClient issClient;
     private final ISSRepository issRepository;
 
-    //TODO How can i change it to right value ?
     protected ISSLocation generateLocation(ISSLocation issLocation) throws IOException, InterruptedException {
         ISSResponse.ISSPosition clientIssLocation = issClient.getIssLocation();
 
