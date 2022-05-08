@@ -1,7 +1,6 @@
 package com.iss;
 
 import com.iss.program.locationOfTheISS.ISSController;
-import com.iss.program.locationOfTheISS.ISSLocation;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Scanner;
@@ -60,7 +59,7 @@ public class UserInterface {
     }
 
     private void getLocation() {
-        String responseBody = issController.getISSLocation(new ISSLocation());
+        String responseBody = issController.getISSLocation();
         responseBody = responseBody
                 .replaceAll("\\{", "\n\t\\{")
                 .replaceAll("}]", "}\n]");

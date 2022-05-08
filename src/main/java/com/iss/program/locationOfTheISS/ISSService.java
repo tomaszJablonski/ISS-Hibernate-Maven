@@ -1,6 +1,5 @@
 package com.iss.program.locationOfTheISS;
 
-import com.iss.program.locationOfTheISS.client.ISSResponse;
 import com.iss.program.locationOfTheISS.client.IssClient;
 import lombok.RequiredArgsConstructor;
 
@@ -12,13 +11,10 @@ public class ISSService {
     private final IssClient issClient;
     private final ISSRepository issRepository;
 
-    protected ISSLocation generateLocation(ISSLocation issLocation) throws IOException, InterruptedException {
-        ISSResponse.ISSPosition clientIssLocation = issClient.getIssLocation();
+    protected ISSLocation generateLocation() throws IOException, InterruptedException {
+        var response = issClient.getIssLocation();
 
-        issLocation.setLatitude(clientIssLocation.getLatitude());
-        issLocation.setLongitude(clientIssLocation.getLongitude());
-
-        return issRepository.save(issLocation);
+        return issRepository.save(new ISSLocation(response.getLatitude(), response.getLongitude()));
     }
 
 

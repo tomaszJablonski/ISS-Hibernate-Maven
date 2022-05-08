@@ -10,9 +10,9 @@ public class ISSController {
     private final ObjectMapper objectMapper;
     private final ISSService issService;
 
-    public String getISSLocation(ISSLocation issLocationNow) {
+    public String getISSLocation() {
         try {
-            ISSLocation issLocation = issService.generateLocation(issLocationNow);
+            ISSLocation issLocation = issService.generateLocation();
             ISSLocationDTO locationDTO = issMapper.issLocationDTO(issLocation);
             return objectMapper.writeValueAsString(locationDTO);
 

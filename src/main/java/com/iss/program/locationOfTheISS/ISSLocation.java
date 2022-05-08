@@ -23,4 +23,8 @@ public class ISSLocation implements Serializable {
     private float latitude;
     private float longitude;
 
+    public ISSLocation(float latitude, float longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
 }
